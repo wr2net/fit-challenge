@@ -24,8 +24,13 @@ sleep 5
 docker exec -it fit-api php artisan migrate:status
 sleep 5
 docker exec -it fit-api php artisan migrate
+sleep 5
+docker exec -it fit-api php artisan migrate:fresh --seed
 
 #Execute Seeders
 docker exec -it fit-api php artisan db:seed --class=PersonalSeeder
 docker exec -it fit-api php artisan db:seed --class=MovementSeeder
 docker exec -it fit-api php artisan db:seed --class=PersonalRecordSeeder
+
+#Execute Unit Tests
+docker exec -it fit-api composer test
