@@ -69,7 +69,6 @@ class MovementController extends Controller
      */
     public function destroy(Movement $movement)
     {
-        $this->authorize('destroy', $movement);
         $this->service->destroy($movement);
         return response()->json([], Response::HTTP_NO_CONTENT);
     }

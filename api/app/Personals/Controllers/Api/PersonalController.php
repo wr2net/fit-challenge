@@ -69,7 +69,6 @@ class PersonalController extends Controller
      */
     public function destroy(Personal $personal)
     {
-        $this->authorize('destroy', $personal);
         $this->service->destroy($personal);
         return response()->json([], Response::HTTP_NO_CONTENT);
     }

@@ -28,6 +28,11 @@ class MovementService
         return $this->movementRepository->findAll();
     }
 
+    public function findById(int $id)
+    {
+        return $this->movementRepository->findById($id);
+    }
+
     /**
      * @param array $data
      * @return Movement

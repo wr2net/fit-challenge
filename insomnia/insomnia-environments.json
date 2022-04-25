@@ -1,0 +1,6 @@
+{
+  "server": "http://localhost:8099/api",
+  "personal_endpoint": "/personals",
+  "movement_endpoint": "/movements",
+  "personalRecords_endpoint": "/personalRecords"
+}
