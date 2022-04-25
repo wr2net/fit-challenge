@@ -10,7 +10,7 @@ class PersonalService
     /**
      * @var PersonalRepository
      */
-    private PersonalRepository $personalRepository;
+    private $personalRepository;
 
     /**
      * @param PersonalRepository $personalRepository
@@ -26,6 +26,11 @@ class PersonalService
     public function findAll()
     {
         return $this->personalRepository->findAll();
+    }
+
+    public function findById(int $personal_id)
+    {
+        return $this->personalRepository->findById($personal_id);
     }
 
     /**

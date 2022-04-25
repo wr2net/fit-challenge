@@ -29,6 +29,14 @@ class PersonalRecordService
     }
 
     /**
+     * @return mixed
+     */
+    public function findById(int $personalRecord_id)
+    {
+        return $this->personalRecordRepository->findById($personalRecord_id);
+    }
+
+    /**
      * @param array $data
      * @return PersonalRecord
      */

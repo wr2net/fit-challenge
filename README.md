@@ -1,4 +1,11 @@
 # Fit Challenge
+
+-----
+## Observation:
+### This system is object of study, case you want use in production, attention with applications environments variables and include authentication.
+
+-----
+
 ## Requirements
 Docker and Docker Compose
 
@@ -23,6 +30,11 @@ Docker and Docker Compose
 
 ## Tests on Insomnia
 [Insomnia Files](insomnia/README.md)
+
+## Unitary tests
+- Execute
+
+`sh scripts/test.sh`
 
 ## Routes
 ### Movements
