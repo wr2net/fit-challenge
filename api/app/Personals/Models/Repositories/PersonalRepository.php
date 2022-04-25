@@ -9,12 +9,11 @@ class PersonalRepository implements PersonalRepositoryInterface
 {
     /**
      * @param int $id
-     * @return array | null
+     * @return object | array | null
      */
-    public function findById(int $id)
+    public function findById(int $id): object|array|null
     {
-        return Personal::withTrashed()
-            ->findOrFail($id);
+        return Personal::first($id);
     }
 
     /**
