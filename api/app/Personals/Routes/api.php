@@ -6,11 +6,11 @@ Route::get('personals', 'PersonalController@index')
 Route::post('personals', 'PersonalController@store')
     ->name('personals.store');
 
-Route::get('personals/{personal}', 'PersonalController@show')
+Route::get('personals/{personal_id}', 'PersonalController@show')
     ->name('personals.show');
 
-Route::put('personals/{personal}', 'PersonalController@update')
+Route::put('personals/{personal_id}', 'PersonalController@update')
     ->name('personals.update');
 
-Route::delete('personals/{personal}', 'PersonalController@destroy')
+Route::delete('personals/{personal_id}', 'PersonalController@destroy')
     ->name('personals.delete');
