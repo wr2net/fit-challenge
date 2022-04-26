@@ -14,6 +14,11 @@ interface MovementRepositoryInterface
     /**
      * @inheritDoc
      */
+    public function findByName(string $name);
+
+    /**
+     * @inheritDoc
+     */
     public function findAll();
 
     /**

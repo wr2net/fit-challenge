@@ -14,6 +14,21 @@ interface PersonalRecordRepositoryInterface
     /**
      * @inheritDoc
      */
+    public function findByMovementId(int $id);
+
+    /**
+     * @inheritDoc
+     */
+    public function findByPersonalId(int $id);
+
+    /**
+     * @inheritDoc
+     */
+    public function findByPersonalMovementId(int $personal_id, int $movement_id);
+
+    /**
+     * @inheritDoc
+     */
     public function findAll();
 
     /**

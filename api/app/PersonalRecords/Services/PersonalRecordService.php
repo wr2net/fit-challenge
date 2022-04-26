@@ -31,9 +31,37 @@ class PersonalRecordService
     /**
      * @return mixed
      */
-    public function findById(int $personalRecord_id)
+    public function findById(int $personalRecord_id): mixed
     {
         return $this->personalRecordRepository->findById($personalRecord_id);
+    }
+
+    /**
+     * @param int $moviment_id
+     * @return mixed
+     */
+    public function findByMovementId(int $moviment_id): mixed
+    {
+        return $this->personalRecordRepository->findByMovementId($moviment_id);
+    }
+
+    /**
+     * @param int $personal_id
+     * @return mixed
+     */
+    public function findByPersonalId(int $personal_id): mixed
+    {
+        return $this->personalRecordRepository->findByPersonalId($personal_id);
+    }
+
+    /**
+     * @param int $personal_id
+     * @param int $movement_id
+     * @return mixed
+     */
+    public function findByPersonalMovementId(int $personal_id, int $movement_id): mixed
+    {
+        return $this->personalRecordRepository->findByPersonalMovementId($personal_id, $movement_id);
     }
 
     /**
