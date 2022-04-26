@@ -7,6 +7,7 @@
 ----
 
 ## Files
+* [Ranking Collections](Ranking.postman_collection.json)
 * [Movement Collections](Movement.postman_collection.json)
 * [Personal Collections](Personal.postman_collection.json)
 * [Personal Records Collections](Personal-Records.postman_collection.json)

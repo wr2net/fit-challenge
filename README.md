@@ -37,6 +37,14 @@ Docker and Docker Compose
 `sh scripts/test.sh`
 
 ## Routes
+
+### Ranking
+TYPE | ENDPOINT                    | CONTROLLER
+-----|-----------------------------|-------
+GET | api/ranking/{movement_name} | api.movements.byMovement › App\Movements\Controllers\Api\MovementController@byMovement
+GET | api/rankings | api.movements.ranking › App\Movements\Controllers\Api\MovementController@ranking
+
+
 ### Movements
 TYPE | ENDPOINT                    | CONTROLLER
 -----|-----------------------------|-------

@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "50b934f8-9491-41e5-8e22-26ea380604f3",
+		"name": "Ranking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ranking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/rankings",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rankings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movement-Ranking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/ranking/Deadlift",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"ranking",
+						"Deadlift"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

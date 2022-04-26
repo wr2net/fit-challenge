@@ -18,6 +18,17 @@ class MovementRepository implements MovementRepositoryInterface
     }
 
     /**
+     * @param string $name
+     * @return object|null
+     */
+    public function findByName(string $name): object | null
+    {
+        return Movement::withTrashed()
+            ->where('name', $name)
+            ->first();
+    }
+
+    /**
      * @return array | null
      */
     public function findAll()

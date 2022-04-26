@@ -9,10 +9,14 @@ use App\PersonalRecords\Resources\PersonalRecordResource;
 use App\PersonalRecords\Services\PersonalRecordService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 
 class PersonalRecordController extends Controller
 {
-    private $service;
+    /**
+     * @var PersonalRecordService
+     */
+    private PersonalRecordService $service;
 
     /**
      * @param PersonalRecordService $service
@@ -34,29 +38,30 @@ class PersonalRecordController extends Controller
 
     /**
      * @param PersonalRecordRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function store(PersonalRecordRequest $request)
+    public function store(PersonalRecordRequest $request): JsonResponse
     {
         $personalRecord = $this->service->store($request->validated());
         return response()->json($personalRecord, Response::HTTP_CREATED);
     }
 
     /**
-     * @param PersonalRecord $personalRecord
-     * @return \Illuminate\Http\JsonResponse
+     * @param int $personalRecord_id
+     * @return JsonResponse
      */
-    public function show(PersonalRecord $personalRecord)
+    public function show(int $personalRecord_id): JsonResponse
     {
+        $personalRecord = $this->service->findById($personalRecord_id);
         return response()->json($personalRecord, Response::HTTP_OK);
     }
 
     /**
      * @param PersonalRecordRequest $request
      * @param PersonalRecord $personalRecord
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function update(PersonalRecordRequest $request, PersonalRecord $personalRecord)
+    public function update(PersonalRecordRequest $request, PersonalRecord $personalRecord): JsonResponse
     {
         $personalRecord = $this->service->update($personalRecord, $request->validated());
         return response()->json($personalRecord, Response::HTTP_OK);
@@ -64,12 +69,10 @@ class PersonalRecordController extends Controller
 
     /**
      * @param PersonalRecord $personalRecord
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @return JsonResponse
      */
-    public function destroy(PersonalRecord $personalRecord)
+    public function destroy(PersonalRecord $personalRecord): JsonResponse
     {
-        $this->authorize('destroy', $personalRecord);
         $this->service->destroy($personalRecord);
         return response()->json([], Response::HTTP_NO_CONTENT);
     }

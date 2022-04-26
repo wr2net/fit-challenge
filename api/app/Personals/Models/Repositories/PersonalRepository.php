@@ -3,17 +3,17 @@
 namespace App\Personals\Models\Repositories;
 
 use App\Personals\Models\Personal;
-use Exception;
 
 class PersonalRepository implements PersonalRepositoryInterface
 {
     /**
      * @param int $id
-     * @return object | array | null
+     * @return object | null
      */
-    public function findById(int $id): object|array|null
+    public function findById(int $id): object|null
     {
-        return Personal::first($id);
+        return Personal::withTrashed()
+            ->findOrFail($id);
     }
 
     /**
