@@ -2,6 +2,8 @@ FROM php:8.1-cli
 
 WORKDIR /var/www
 
+COPY . /var/www
+
 RUN apt-get update && \
     apt-get install libzip-dev -y && \
     docker-php-ext-install zip pdo pdo_mysql
